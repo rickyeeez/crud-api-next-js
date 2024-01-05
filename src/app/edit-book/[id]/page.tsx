@@ -99,6 +99,7 @@ export default function Page({ params }: { params: { id: string } }) {
   };
   
   const fetchData = async () => {
+    setLoading(true)
     try {
       const apiUrl = 'https://testcasefe2023.ignorelist.com/api/v1/data/' + params.id;
       const res = await fetch(apiUrl, {
@@ -125,7 +126,7 @@ export default function Page({ params }: { params: { id: string } }) {
 
   return (
     <div className='flex flex-col  w-2/4 h-full '>
-        <h1 className='text-2xl pb-2'>Tambah buku</h1>
+        <h1 className='text-2xl pb-2'>Update Data</h1>
     <div className='p-6 flex flex-col items-center rounded-md shadow-[0_3px_10px_rgb(0,0,0,0.2)] w-full h-4/6'>
     <div className="relative z-0 w-full mb-5 group">
       <input type="email" name="title" id="title" onChange={handleInputChange} className="block py-2.5 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " value={formData.title} required />
@@ -145,7 +146,7 @@ export default function Page({ params }: { params: { id: string } }) {
   </div>
 
   <button onClick={handleSubmit} className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-0 border-blue-700 active:border-b-4 hover:border-blue-500 rounded">
-  Tambah Data
+  Update Data
 </button>
 {loading ? (
         <LoadComponent/>
