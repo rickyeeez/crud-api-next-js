@@ -21,8 +21,8 @@ const ListBook: React.FC<ListBookProps> = ({ books,refetchData }) => {
   const deleteData = async (id : number) => {
     try {
       Swal.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
+        title: "Apakah anda yakin ?",
+        text: "Ingin menghapus data buku ini ?",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
@@ -107,7 +107,6 @@ const ListBook: React.FC<ListBookProps> = ({ books,refetchData }) => {
       <tbody className="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
         {books.length != 0 ? (
     books.map((book,index) => (
-      
       <tr key={book.id} className="odd:bg-white text-sm odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
         <td className="px-6 py-4 whitespace-nowrap dark:text-white">{index+1}</td>
         <td className="px-6 py-4 whitespace-nowrap dark:text-white">{book.title}</td>
@@ -136,7 +135,9 @@ const ListBook: React.FC<ListBookProps> = ({ books,refetchData }) => {
         
       </tbody>
     </table>
+    
   );
+  
 };
 
 export default ListBook;
